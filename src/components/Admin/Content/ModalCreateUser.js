@@ -2,8 +2,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import { FcPlus } from "react-icons/fc";
-import axios from "axios";
 import { toast } from "react-toastify";
+import { postCreateNewUser } from "../../../services/apiService";
 
 const ModalCreateUser = (props) => {
   const { show, setShow } = props;
@@ -28,6 +28,7 @@ const ModalCreateUser = (props) => {
     if (event.target && event.target.files && event.target.files[0]) {
       setPreviewImage(URL.createObjectURL(event.target.files[0]));
       setImage(event.target.files[0]);
+    } else {
     }
   };
 
@@ -52,27 +53,15 @@ const ModalCreateUser = (props) => {
       return;
     }
 
-    //call APIs submit data
-    const data = new FormData();
-    data.append("email", email);
-    data.append("password", password);
-    data.append("username", username);
-    data.append("role", role);
-    data.append("userImage", image);
+    let data = await postCreateNewUser(email, password, username, role, image);
 
-    let res = await axios.post(
-      "http://localhost:8081/api/v1/participant",
-      data
-    );
-    console.log("check res: ", res.data);
-
-    if (res.data && res.data.EC === 0) {
-      toast.success(res.data.EM);
+    if (data && data.EC === 0) {
+      toast.success(data.EM);
       handleClose();
     }
 
-    if (res.data && res.data.EC !== 0) {
-      toast.error(res.data.EM);
+    if (data && data.EC !== 0) {
+      toast.error(data.EM);
     }
   };
 
@@ -130,12 +119,8 @@ const ModalCreateUser = (props) => {
                 value={role}
                 onChange={(event) => setRole(event.target.value)}
               >
-                <option selected value="USER">
-                  USER
-                </option>
-                <option selected value="ADMIN">
-                  ADMIN
-                </option>
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
               </select>
             </div>
             <div className="col-md-12">
