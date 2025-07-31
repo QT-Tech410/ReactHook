@@ -8,8 +8,8 @@ import Admin from "./components/Admin/Admin";
 import HomePage from "./components/Home/HomePage";
 import DashBoard from "./components/Admin/Content/DashBoard";
 import ManageUser from "./components/Admin/Content/ManageUser";
-import Login from "./components/Admin/Auth/Login";
-import Register from "./components/Admin/Auth/Register";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
 
 const Layout = (props) => {
   return (

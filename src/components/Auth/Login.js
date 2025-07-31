@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
-import { postLogin } from "../../../services/apiService";
+import { postLogin } from "../../services/apiService";
 import { toast } from "react-toastify";
 
 const Login = (props) => {
