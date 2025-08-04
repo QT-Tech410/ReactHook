@@ -1,16 +1,17 @@
-import { useState } from "react";
 import "./ManageQuiz.scss";
 import Select from "react-select";
+import { useState } from "react";
 import { postCreateNewQuiz } from "../../../../services/apiService";
 import { toast } from "react-toastify";
 import TableQuiz from "./TableQuiz";
-import { Accordion } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
 
 const options = [
   { value: "EASY", label: "EASY" },
   { value: "MEDIUM", label: "MEDIUM" },
   { value: "HARD", label: "HARD" },
 ];
+
 const ManageQuiz = (props) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -26,7 +27,7 @@ const ManageQuiz = (props) => {
   const handleSubmitQuiz = async () => {
     //validate
     if (!name || !description) {
-      toast.error("Name/Description is required ");
+      toast.error("Name/Description is required");
       return;
     }
 
@@ -44,16 +45,14 @@ const ManageQuiz = (props) => {
     <div className="quiz-container">
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Manage Quiz</Accordion.Header>
+          <Accordion.Header>Manage Quizzes</Accordion.Header>
           <Accordion.Body>
             <div className="add-new">
               <fieldset className="border rounded-3 p-3">
-                <legend className="float-none w-auto pxx-3">
-                  Add new Quiz:
-                </legend>
+                <legend className="float-none w-auto px-3">Add new Quiz</legend>
                 <div className="form-floating mb-3">
                   <input
-                    type="email"
+                    type="text"
                     className="form-control"
                     placeholder="your quiz name"
                     value={name}
@@ -65,7 +64,7 @@ const ManageQuiz = (props) => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="description"
+                    placeholder="description..."
                     value={description}
                     onChange={(event) => setDescription(event.target.value)}
                   />
@@ -80,7 +79,7 @@ const ManageQuiz = (props) => {
                   />
                 </div>
                 <div className="more-actions form-group">
-                  <label className="mb-1">Upload Image</label>
+                  <label className="mb-1"> Upload Image</label>
                   <input
                     type="file"
                     className="form-control"
@@ -100,8 +99,7 @@ const ManageQuiz = (props) => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-
-      <div className="list-datail">
+      <div className="list-detail">
         <TableQuiz />
       </div>
     </div>

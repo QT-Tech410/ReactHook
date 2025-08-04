@@ -1,18 +1,36 @@
 import { useEffect, useState } from "react";
 import { getAllQuizForAdmin } from "../../../../services/apiService";
+import ModalDeleteQuiz from "./ModalDeleteQuiz";
+import ModalUpdateQuiz from "./ModalUpdateQuiz";
 
 const TableQuiz = (props) => {
   const [listQuiz, setListQuiz] = useState([]);
+  const [isShowModalUpdateQuiz, setIsShowModalUpdateQuiz] = useState(false);
+  const [isShowModalDeleteQuiz, setIsShowModalDeleteQuiz] = useState(false);
+  const [dataUpdate, setDataUpdate] = useState({});
+  const [dataDelete, setDataDelete] = useState({});
 
   useEffect(() => {
     fetchQuiz();
   }, []);
 
   const fetchQuiz = async () => {
+    setDataUpdate({});
+    setDataDelete({});
     let res = await getAllQuizForAdmin();
     if (res && res.EC === 0) {
       setListQuiz(res.DT);
     }
+  };
+
+  const handleUpdate = (quiz) => {
+    setDataUpdate(quiz);
+    setIsShowModalUpdateQuiz(true);
+  };
+
+  const handleDelete = (quiz) => {
+    setDataDelete(quiz);
+    setIsShowModalDeleteQuiz(true);
   };
   return (
     <>
@@ -39,13 +57,13 @@ const TableQuiz = (props) => {
                   <td>
                     <button
                       className="btn btn-warning mx-3"
-                      //   onClick={() => props.handleClickBtnUpdate(item)}
+                      onClick={() => handleUpdate(item)}
                     >
                       Edit
                     </button>
                     <button
                       className="btn btn-danger"
-                      //   onClick={() => props.handleClickBtnDelete(item)}
+                      onClick={() => handleDelete(item)}
                     >
                       Delete
                     </button>
@@ -55,6 +73,19 @@ const TableQuiz = (props) => {
             })}
         </tbody>
       </table>
+      <ModalUpdateQuiz
+        show={isShowModalUpdateQuiz}
+        setShow={setIsShowModalUpdateQuiz}
+        dataUpdate={dataUpdate}
+        fetchQuiz={fetchQuiz}
+        setDataUpdate={setDataUpdate}
+      />
+      <ModalDeleteQuiz
+        show={isShowModalDeleteQuiz}
+        setShow={setIsShowModalDeleteQuiz}
+        dataDelete={dataDelete}
+        fetchQuiz={fetchQuiz}
+      />
     </>
   );
 };
