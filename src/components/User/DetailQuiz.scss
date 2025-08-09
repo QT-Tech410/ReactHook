@@ -46,5 +46,36 @@
     border-radius: 5px;
     border: 2px solid #ccc;
     padding: 20px;
+
+    .main-timer {
+      border-bottom: 1px dashed;
+      padding-top: 25px;
+      padding-bottom: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .main-question {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 30px;
+
+      .question {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
   }
 }
