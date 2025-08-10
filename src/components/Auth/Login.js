@@ -51,6 +51,12 @@ const Login = (props) => {
       setIsLoading(false);
     }
   };
+
+  const handleKeyDown = (event) => {
+    if (event && event.key === "Enter") {
+      handleLogin();
+    }
+  };
   return (
     <div className="login-container">
       <div className="header">
@@ -82,6 +88,7 @@ const Login = (props) => {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             className="form-control"
+            onKeyDown={(event) => handleKeyDown(event)}
           />
         </div>
         <span className="forgot-password">Forgot Password ?</span>
@@ -91,7 +98,7 @@ const Login = (props) => {
             className="btn-submit"
             disabled={isLoading}
           >
-            {isLoading == true && <ImSpinner10 className="loader-icon" />}
+            {isLoading === true && <ImSpinner10 className="loader-icon" />}
             <span> Login</span>
           </button>
         </div>
