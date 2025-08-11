@@ -1,10 +1,12 @@
 import videoHomepage from "../../assets/video-homepage.mp4";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const HomePage = (props) => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="homepage-container">
@@ -12,11 +14,8 @@ const HomePage = (props) => {
         <source src={videoHomepage} type="video/mp4" />
       </video>
       <div className="homepage-content">
-        <div className="homepage-text">There's a better way to ask</div>
-        <div className="homepage-title">
-          You don't want to make a boring form. And your audience won'n answer
-          one. Create a typeform instead - and make everyone happy.
-        </div>
+        <div className="homepage-text">{t("homepage.title1")}</div>
+        <div className="homepage-title">{t("homepage.title2")}</div>
         <div className="homepage-button">
           {isAuthenticated === false ? (
             <button onClick={() => navigate("/login")}>
