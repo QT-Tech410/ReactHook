@@ -13,6 +13,10 @@ body {
   .dropdown-toggle::after {
     display: none;
   }
+
+  img {
+    border-radius: 50%;
+  }
 }
 
 @media (min-width: 1500px) {

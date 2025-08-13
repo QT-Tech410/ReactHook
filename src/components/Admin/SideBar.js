@@ -9,21 +9,17 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 
-import {
-  FaTachometerAlt,
-  FaGem,
-  FaList,
-  FaGithub,
-  FaRegLaughWink,
-  FaHeart,
-} from "react-icons/fa";
+import { FaGem } from "react-icons/fa";
 import sidebarBg from "../../assets/bg2.jpg";
 import { DiReact } from "react-icons/di";
 import { MdDashboard } from "react-icons/md";
 import "./SideBar.scss";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SideBar = (props) => {
+  const { t } = useTranslation();
+
   const nagivate = useNavigate();
   const { image, collapsed, toggled, handleToggleSidebar } = props;
   return (
@@ -56,22 +52,22 @@ const SideBar = (props) => {
         <SidebarContent>
           <Menu iconShape="circle">
             <MenuItem icon={<MdDashboard />}>
-              Dashboard
+              {t("admin.sidebar.dashboard")}
               <Link to="/admins" />
             </MenuItem>
           </Menu>
           <Menu iconShape="circle">
-            <SubMenu icon={<FaGem />} title="Features">
+            <SubMenu icon={<FaGem />} title={t("admin.sidebar.feature")}>
               <MenuItem>
-                Quản lý Users
+                {t("admin.sidebar.manage-user")}
                 <Link to="/admins/manage-users" />
               </MenuItem>
               <MenuItem>
-                Quản lý Bài Quiz
+                {t("admin.sidebar.manage-quiz")}
                 <Link to="/admins/manage-quizzes" />
               </MenuItem>
               <MenuItem>
-                Quản lý Câu Hỏi
+                {t("admin.sidebar.manage-question")}
                 <Link to="/admins/manage-questions" />
               </MenuItem>
             </SubMenu>
@@ -86,7 +82,7 @@ const SideBar = (props) => {
             }}
           >
             <a
-              href="https://github.com/azouaoui-med/react-pro-sidebar"
+              href="https://github.com/QT-Tech410/ReactHook"
               target="_blank"
               className="sidebar-btn"
               rel="noopener noreferrer"
@@ -98,7 +94,7 @@ const SideBar = (props) => {
                   overflow: "hidden",
                 }}
               >
-                &#169; View Source
+                &#169; {t("admin.sidebar.brand")}
               </span>
             </a>
           </div>

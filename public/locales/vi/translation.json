@@ -1,9 +1,135 @@
 {
   "homepage": {
     "title1": "Có một cách tốt hơn để hỏi",
-    "title2": "Bạn không muốn tạo ra một hình thức nhàm chán",
+    "title2": "và cách dễ nhất là làm thử bài Quiz...",
     "title3": {
-      "login": "Bắt đầu thôi. Nó miễn phí."
+      "login": "Bắt đầu ngay. Hoàn toàn miễn phí",
+      "doing": "Làm bài Quiz ngay bây giờ"
+    }
+  },
+  "header": {
+    "home": "Trang chủ",
+    "user": "Người dùng",
+    "admin": "Quản trị",
+    "setting": "Cài đặt",
+    "profile": "Thông tin cá nhân",
+    "logout": "Đăng xuất",
+    "quiz": "Bài Quiz",
+    "login": "Đăng nhập",
+    "signup": "Đăng ký"
+  },
+  "quiz": {
+    "question": "Câu hỏi",
+    "result": "Kết quả của bạn...",
+    "total-question": "Tổng số câu hỏi",
+    "total-correct": "Tổng số câu trả lời đúng",
+    "show-answer": "Hiển thị đáp án",
+    "close": "Đóng",
+    "start": "Bắt đầu",
+    "previous": "Quay lại",
+    "next": "Tiếp theo",
+    "finish": "Nộp bài",
+    "no-quiz": "Hiện tại bạn không có bài kiểm tra nào..."
+  },
+  "login": {
+    "do-not-have": "Bạn chưa có tài khoản",
+    "signup": "Đăng ký",
+    "welcome": "Xin chào, bạn là ai",
+    "email": "Tài khoản Email",
+    "password": "Mật khẩu",
+    "forgot-pass": "Quên mật khẩu",
+    "do-login": "Đăng nhập",
+    "back": "Về trang chủ"
+  },
+  "register": {
+    "already": "Bạn đã có tài khoản chưa",
+    "login": "Đăng nhập",
+    "start": "Bắt đầu hành trình của bạn",
+    "email": "Tài khoản Email",
+    "password": "Mật khẩu",
+    "username": "Tên người dùng",
+    "submit": "Tạo tài khoản miễn phí của tôi",
+    "back": "Về trang chủ"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Phân tích tổng quan",
+      "total-user": "Tổng số người dùng",
+      "total-quiz": "Tổng số bài Quiz",
+      "total-question": "Tổng số câu hỏi",
+      "total-answer": "Tổng số câu trả lời"
+    },
+    "sidebar": {
+      "dashboard": "Tổng quan",
+      "manage-user": "Quản lý người dùng",
+      "manage-quiz": "Quản lý bài Quiz",
+      "manage-question": "Quản lý câu hỏi",
+      "feature": "Tính năng",
+      "brand": "Xem nguồn"
+    },
+    "manage-user": {
+      "title": "Quản lý người dùng",
+      "add-new": "Thêm người dùng mới",
+      "username": "Tên người dùng",
+      "role": "Vai trò",
+      "action": "Hành động",
+      "update": "Cập nhật",
+      "delete": "Xóa",
+      "view": "Xem",
+      "no-user": "Không tìm thấy người dùng nào",
+      "modal": {
+        "t-addnew": "Thêm người dùng mới",
+        "t-view": "Xem thông tin người dùng",
+        "t-update": "Cập nhật người dùng",
+        "t-delete": "Xác nhận xóa người dùng",
+        "b-delete": "Bạn có chắc chắn muốn xóa người dùng này",
+        "password": "Mật khẩu",
+        "username": "Tên người dùng",
+        "role": "Vai trò",
+        "u-image": "Tải ảnh lên",
+        "p-image": "Xem trước ảnh",
+        "confirm": "Xác nhận",
+        "save": "Lưu",
+        "close": "Đóng",
+        "cancel": "Hủy"
+      }
+    },
+    "manage-quiz": {
+      "a1": "Quản lý bài kiểm tra",
+      "a2": "Cập nhật câu hỏi/trả lời của bài kiểm tra",
+      "a3": "Gán cho người dùng",
+      "add-quiz": "Thêm bài kiểm tra mới",
+      "quiz-name": "Tên",
+      "quiz-desc": "Mô tả",
+      "quiz-type": "Độ khó...",
+      "quiz-save": "Lưu",
+      "quiz-upload": "Tải ảnh lên",
+      "list-quiz": "Danh sách bài kiểm tra",
+      "type": "Loại",
+      "action": "Hành động",
+      "edit": "Chỉnh sửa",
+      "delete": "Xóa",
+      "s-quiz": "Chọn bài kiểm tra",
+      "s-user": "Chọn người dùng",
+      "a-question": "",
+      "add-question": "Thêm câu hỏi",
+      "save-question": "Lưu câu hỏi",
+      "assign": "Gán",
+      "difficulty": "Độ khó",
+      "answer": "Câu trả lời",
+      "description": "mô tả",
+      "question": "Câu hỏi",
+      "no-file": "0 tệp đã được tải lên",
+      "modal": {
+        "t-update": "Cập nhật bài kiểm tra",
+        "t-delete": "Xác nhận xóa bài kiểm tra",
+        "b-delete": "Bạn có chắc chắn muốn xóa bài kiểm tra này",
+        "u-image": "Tải ảnh lên",
+        "p-image": "Xem trước ảnh",
+        "confirm": "Xác nhận",
+        "save": "Lưu",
+        "close": "Đóng"
+      }
     }
   }
 }

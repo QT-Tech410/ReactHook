@@ -1,7 +1,10 @@
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const TableUserPaginate = (props) => {
+  const { t } = useTranslation();
+
   const { listUsers, pageCount } = props;
 
   const handlePageClick = (event) => {
@@ -16,10 +19,10 @@ const TableUserPaginate = (props) => {
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Username</th>
+            <th scope="col">{t("admin.manage-user.username")}</th>
             <th scope="col">Email</th>
-            <th scope="col">Role</th>
-            <th>Action</th>
+            <th scope="col">{t("admin.manage-user.role")}</th>
+            <th>{t("admin.manage-user.action")}</th>
           </tr>
         </thead>
         <tbody>
@@ -37,19 +40,19 @@ const TableUserPaginate = (props) => {
                       className="btn btn-secondary"
                       onClick={() => props.handleClickBtnView(item)}
                     >
-                      View
+                      {t("admin.manage-user.view")}
                     </button>
                     <button
                       className="btn btn-warning mx-3"
                       onClick={() => props.handleClickBtnUpdate(item)}
                     >
-                      Update
+                      {t("admin.manage-user.update")}
                     </button>
                     <button
                       className="btn btn-danger"
                       onClick={() => props.handleClickBtnDelete(item)}
                     >
-                      Delete
+                      {t("admin.manage-user.delete")}
                     </button>
                   </td>
                 </tr>
@@ -57,7 +60,7 @@ const TableUserPaginate = (props) => {
             })}
           {listUsers && listUsers.length === 0 && (
             <tr>
-              <td colSpan="4"> No users found </td>
+              <td colSpan="4"> {t("admin.manage-user.no-user")} </td>
             </tr>
           )}
         </tbody>

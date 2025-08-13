@@ -6,8 +6,11 @@ import {
   getAllUsers,
 } from "../../../../services/apiService";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const AssignQuiz = () => {
+  const { t } = useTranslation();
+
   const [listQuiz, setListQuiz] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState({});
 
@@ -57,7 +60,7 @@ const AssignQuiz = () => {
   return (
     <div className="assign-quiz-container row">
       <div className="col-6 form-group">
-        <label className="mb-2">Select Quiz:</label>
+        <label className="mb-2">{t("admin.manage-quiz.s-quiz")}:</label>
         <Select
           defaultValue={selectedQuiz}
           onChange={setSelectedQuiz}
@@ -65,7 +68,7 @@ const AssignQuiz = () => {
         />
       </div>
       <div className="col-6 form-group">
-        <label className="mb-2">Select User:</label>
+        <label className="mb-2">{t("admin.manage-quiz.s-user")}:</label>
         <Select
           defaultValue={selectedUser}
           onChange={setSelectedUser}
@@ -74,7 +77,7 @@ const AssignQuiz = () => {
       </div>
       <div>
         <button className="btn btn-warning mt-3" onClick={() => handleAssign()}>
-          Assign
+          {t("admin.manage-quiz.assign")}
         </button>
       </div>
     </div>

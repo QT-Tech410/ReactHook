@@ -5,8 +5,11 @@ import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { putUpdateUser } from "../../../services/apiService";
 import _ from "lodash";
+import { useTranslation } from "react-i18next";
 
 const ModalViewUser = (props) => {
+  const { t } = useTranslation();
+
   const { show, setShow, dataUpdate } = props;
   const handleClose = () => {
     setShow(false);
@@ -89,7 +92,7 @@ const ModalViewUser = (props) => {
         className="modal-add-user"
       >
         <Modal.Header closeButton>
-          <Modal.Title>View Information User</Modal.Title>
+          <Modal.Title>{t("admin.manage-user.modal.t-view")}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -105,7 +108,9 @@ const ModalViewUser = (props) => {
               />
             </div>
             <div className="col-md-6">
-              <label className="form-label">Password</label>
+              <label className="form-label">
+                {t("admin.manage-user.modal.password")}
+              </label>
               <input
                 type="password"
                 className="form-control"
@@ -116,7 +121,9 @@ const ModalViewUser = (props) => {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">Username</label>
+              <label className="form-label">
+                {t("admin.manage-user.modal.username")}
+              </label>
               <input
                 type="text"
                 className="form-control"
@@ -126,7 +133,9 @@ const ModalViewUser = (props) => {
               />
             </div>
             <div className="col-md-4">
-              <label className="form-label">Role</label>
+              <label className="form-label">
+                {t("admin.manage-user.modal.role")}
+              </label>
               <select
                 className="form-select "
                 value={role}
@@ -154,7 +163,7 @@ const ModalViewUser = (props) => {
               {previewImage ? (
                 <img src={previewImage} />
               ) : (
-                <span>Preview Image</span>
+                <span>{t("admin.manage-user.modal.p-image")}</span>
               )}
             </div>
           </form>
@@ -162,7 +171,7 @@ const ModalViewUser = (props) => {
 
         <Modal.Footer>
           <Button variant="secondary" onClick={() => handleClose()}>
-            Close
+            {t("admin.manage-user.modal.close")}
           </Button>
           {/* <Button variant="primary" onClick={() => handleSubmitCreateUser()}>
             Save

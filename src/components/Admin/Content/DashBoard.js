@@ -11,8 +11,11 @@ import {
   Bar,
 } from "recharts";
 import { getOverView } from "../../../services/apiService";
+import { useTranslation } from "react-i18next";
 
 const DashBoard = (props) => {
+  const { t } = useTranslation();
+
   const [dataOverView, setDataOverView] = useState([]);
   const [dataChart, setDataChart] = useState([]);
 
@@ -25,15 +28,21 @@ const DashBoard = (props) => {
     if (res && res.EC === 0) {
       setDataOverView(res.DT);
       //process chart data
-      let Qz = 0,
+      let Us = 0,
+        Qz = 0,
         Qs = 0,
         As = 0;
 
+      Us = res?.DT?.users?.total ?? 0;
       Qz = res?.DT?.others?.countQuiz ?? 0;
       Qs = res?.DT?.others?.countQuestions ?? 0;
       As = res?.DT?.others?.countAnswers ?? 0;
 
       const data = [
+        {
+          name: "Users",
+          Us: Us,
+        },
         {
           name: "Quizzes",
           Qz: Qz,
@@ -53,11 +62,11 @@ const DashBoard = (props) => {
 
   return (
     <div className="dashboard-container">
-      <div className="title">Analytics Dashboard</div>
+      <div className="title">{t("admin.dashboard.title")}</div>
       <div className="content">
         <div className="c-left">
           <div className="child">
-            <span className="text-1">Total Users</span>
+            <span className="text-1">{t("admin.dashboard.total-user")}</span>
             <span className="text-2">
               {dataOverView &&
               dataOverView.users &&
@@ -69,7 +78,7 @@ const DashBoard = (props) => {
             </span>
           </div>
           <div className="child">
-            <span className="text-1">Total Quizzes</span>
+            <span className="text-1">{t("admin.dashboard.total-quiz")}</span>
             <span className="text-2">
               {dataOverView &&
               dataOverView.others &&
@@ -81,7 +90,9 @@ const DashBoard = (props) => {
             </span>
           </div>
           <div className="child">
-            <span className="text-1">Total Questions</span>
+            <span className="text-1">
+              {t("admin.dashboard.total-question")}
+            </span>
             <span className="text-2">
               {dataOverView &&
               dataOverView.others &&
@@ -93,7 +104,7 @@ const DashBoard = (props) => {
             </span>
           </div>
           <div className="child">
-            <span className="text-1">Total Answers</span>
+            <span className="text-1">{t("admin.dashboard.total-answer")}</span>
             <span className="text-2">
               {dataOverView &&
               dataOverView.others &&
@@ -113,6 +124,7 @@ const DashBoard = (props) => {
               <YAxis />
               <Tooltip />
               <Legend />
+              <Bar dataKey="Us" fill="#682f14ff" />
               <Bar dataKey="Qz" fill="#8884d8" />
               <Bar dataKey="Qs" fill="#82ca9d" />
               <Bar dataKey="As" fill="#78ba1aff" />

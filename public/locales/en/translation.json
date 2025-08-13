@@ -3,7 +3,133 @@
     "title1": "There's a better way to ask",
     "title2": "You don't want to make a boring form",
     "title3": {
-      "login": "Get's started. It's free"
+      "login": "Get's started. It's free",
+      "doing": "Doing Quiz Now"
+    }
+  },
+  "header": {
+    "home": "Home",
+    "user": "Users",
+    "admin": "Admin",
+    "setting": "Setting",
+    "profile": "Profile",
+    "logout": "Log out",
+    "quiz": "Quiz",
+    "login": "Log in",
+    "signup": "Sign up"
+  },
+  "quiz": {
+    "question": "Question",
+    "result": "Your Result...",
+    "total-question": "Total Question",
+    "total-correct": "Total Correct answers",
+    "show-answer": "Show answers",
+    "close": "Close",
+    "start": "Start Now",
+    "previous": "Prev",
+    "next": "Next",
+    "finish": "Finish",
+    "no-quiz": "You don't have any quiz now..."
+  },
+  "login": {
+    "do-not-have": "Don't have an account yet",
+    "signup": "Sign up",
+    "welcome": "Hello, who's this",
+    "email": "Email",
+    "password": "Password",
+    "forgot-pass": "Forgot Password",
+    "do-login": "Login",
+    "back": "Go to Homepage"
+  },
+  "register": {
+    "already": "Already have an account",
+    "login": "Log in",
+    "start": "Start your journey",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "submit": "Create my free account",
+    "back": "Go to Homepage"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Analytics Dashboard",
+      "total-user": "Total Users",
+      "total-quiz": "Total Quizzes",
+      "total-question": "Total Questions",
+      "total-answer": "Total Answers"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "manage-user": "Manage Users",
+      "manage-quiz": "Manage Quizzes",
+      "manage-question": "Manage Questions",
+      "feature": "Features",
+      "brand": "View Source"
+    },
+    "manage-user": {
+      "title": "Manage User",
+      "add-new": "Add new users",
+      "username": "Username",
+      "role": "Role",
+      "action": "Action",
+      "update": "Update",
+      "delete": "Delete",
+      "view": "View",
+      "no-user": "No users found",
+      "modal": {
+        "t-addnew": "Add new user",
+        "t-view": "View Information User",
+        "t-update": "Update a user",
+        "t-delete": "Confirm delete the user",
+        "b-delete": "Are you sure to delete this user",
+        "password": "Password",
+        "username": "Username",
+        "role": "Role",
+        "u-image": "Upload File Image",
+        "p-image": "Preview Image",
+        "confirm": "Confirm",
+        "save": "Save",
+        "close": "Close",
+        "cancel": "Cancel"
+      }
+    },
+    "manage-quiz": {
+      "a1": "Manage Quizzes",
+      "a2": "Update Q/A Quizzes",
+      "a3": "Assign to Users",
+      "add-quiz": "Add new Quiz",
+      "quiz-name": "Name",
+      "quiz-desc": "Description",
+      "quiz-type": "Quiz type...",
+      "quiz-save": "Save",
+      "quiz-upload": "Upload Image",
+      "list-quiz": "List Quizzes",
+      "type": "Type",
+      "action": "Action",
+      "edit": "Edit",
+      "delete": "Delete",
+      "s-quiz": "Select Quiz",
+      "s-user": "Select User",
+      "a-question": "",
+      "add-question": "Add question",
+      "save-question": "Save Question",
+      "assign": "Assign",
+      "difficulty": "Difficulty",
+      "answer": "Answers",
+      "description": "description",
+      "question": "Question",
+      "no-file": "0 file is uploaded",
+      "modal": {
+        "t-update": "Update the Quiz",
+        "t-delete": "Confirm Delete the Quiz",
+        "b-delete": "Are you sure to delete this quiz",
+        "u-image": "Upload File Image",
+        "p-image": "Preview Image",
+        "confirm": "Confirm",
+        "save": "Save",
+        "close": "Close"
+      }
     }
   }
 }

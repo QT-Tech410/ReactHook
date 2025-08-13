@@ -15,8 +15,11 @@ import {
   postUpsertQA,
 } from "../../../../services/apiService";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const QuizQA = (props) => {
+  const { t } = useTranslation();
+
   const initQuestions = [
     {
       id: uuidv4(),
@@ -272,7 +275,7 @@ const QuizQA = (props) => {
     <div className="questions-container">
       <div className="add-new-question">
         <div className="col-6 form-group">
-          <label className="mb-2">Select Quiz:</label>
+          <label className="mb-2">{t("admin.manage-quiz.s-quiz")}:</label>
           <Select
             defaultValue={selectedQuiz}
             onChange={setSelectedQuiz}
@@ -280,7 +283,7 @@ const QuizQA = (props) => {
           />
         </div>
 
-        <div className="mt-3 mb-2">Add question:</div>
+        <div className="mt-3 mb-2">{t("admin.manage-quiz.add-question")}:</div>
         {questions &&
           questions.length > 0 &&
           questions.map((question, index) => {
@@ -301,7 +304,10 @@ const QuizQA = (props) => {
                         )
                       }
                     />
-                    <label>Question {index + 1}'s description</label>
+                    <label>
+                      {t("admin.manage-quiz.question")} {index + 1}'s{" "}
+                      {t("admin.manage-quiz.description")}...
+                    </label>
                   </div>
                   <div className="group-upload">
                     <label htmlFor={`${question.id}`}>
@@ -324,7 +330,7 @@ const QuizQA = (props) => {
                           {question.imageName}
                         </span>
                       ) : (
-                        "0 file is uploaded"
+                        <>{t("admin.manage-quiz.no-file")}</>
                       )}
                     </span>
                   </div>
@@ -377,7 +383,9 @@ const QuizQA = (props) => {
                               )
                             }
                           />
-                          <label>Answers {index + 1}</label>
+                          <label>
+                            {t("admin.manage-quiz.answer")} {index + 1}
+                          </label>
                         </div>
                         <div className="btn-group">
                           <span>
@@ -415,7 +423,7 @@ const QuizQA = (props) => {
               onClick={() => handleSubmitQuestionForQuiz()}
               className="btn btn-warning"
             >
-              Save Question
+              {t("admin.manage-quiz.save-question")}
             </button>
           </div>
         )}

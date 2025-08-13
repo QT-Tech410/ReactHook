@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { getAllQuizForAdmin } from "../../../../services/apiService";
 import ModalDeleteQuiz from "./ModalDeleteQuiz";
 import ModalUpdateQuiz from "./ModalUpdateQuiz";
+import { useTranslation } from "react-i18next";
 
 const TableQuiz = (props) => {
+  const { t } = useTranslation();
+
   const [listQuiz, setListQuiz] = useState([]);
   const [isShowModalUpdateQuiz, setIsShowModalUpdateQuiz] = useState(false);
   const [isShowModalDeleteQuiz, setIsShowModalDeleteQuiz] = useState(false);
@@ -34,15 +37,15 @@ const TableQuiz = (props) => {
   };
   return (
     <>
-      <div>List Quizzes: </div>
+      <div>{t("admin.manage-quiz.list-quiz")}: </div>
       <table className="table table-hover table-bordered my-2">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Type</th>
-            <th>Action</th>
+            <th scope="col">{t("admin.manage-quiz.quiz-name")}</th>
+            <th scope="col">{t("admin.manage-quiz.quiz-desc")}</th>
+            <th scope="col">{t("admin.manage-quiz.type")}</th>
+            <th>{t("admin.manage-quiz.action")}</th>
           </tr>
         </thead>
         <tbody>
@@ -59,13 +62,13 @@ const TableQuiz = (props) => {
                       className="btn btn-warning mx-3"
                       onClick={() => handleUpdate(item)}
                     >
-                      Edit
+                      {t("admin.manage-quiz.edit")}
                     </button>
                     <button
                       className="btn btn-danger"
                       onClick={() => handleDelete(item)}
                     >
-                      Delete
+                      {t("admin.manage-quiz.delete")}
                     </button>
                   </td>
                 </tr>
