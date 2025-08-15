@@ -129,6 +129,25 @@ const getOverView = () => {
   return axios.get(`api/v1/overview`);
 };
 
+const updateProfile = (username, image) => {
+  //call APIs submit data
+  const data = new FormData();
+  data.append("username", username);
+  data.append("userImage", image);
+
+  return axios.post("api/v1/profile", data);
+};
+
+const changePassword = (currentpassword, newpassword) => {
+  return axios.post(`api/v1/change-password`, {
+    current_password: currentpassword,
+    new_password: newpassword,
+  });
+};
+
+const getHistoty = () => {
+  return axios.get(`api/v1/history`);
+};
 export {
   postCreateNewUser,
   getAllUsers,
@@ -151,4 +170,7 @@ export {
   getQuizWithQA,
   postUpsertQA,
   getOverView,
+  updateProfile,
+  changePassword,
+  getHistoty,
 };

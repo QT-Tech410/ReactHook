@@ -1,0 +1,47 @@
+.user-infor-container {
+  .img-preview {
+    height: 150px;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    border-radius: 5px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .lable-upload {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+
+    &:hover {
+      background-color: #dcdcdc;
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  input {
+    padding-right: 35px;
+  }
+  .icons-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
